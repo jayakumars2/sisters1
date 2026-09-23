@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Lakshmipriya 💗</title>
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>For Lakshmipriya 💖</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   BASIC RESET
+========================= */
 
 * {
     margin: 0;
@@ -14,63 +20,53 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fff4f8;
-    color: #542638;
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
     overflow-x: hidden;
-}
-
-/* =========================
-   BACKGROUND
-========================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
     background:
-        radial-gradient(circle at 10% 10%, #ffd3e3 0%, transparent 25%),
-        radial-gradient(circle at 90% 20%, #ffd7e8 0%, transparent 25%),
-        radial-gradient(circle at 50% 100%, #ffe0ec 0%, transparent 30%);
-    pointer-events: none;
-    z-index: -2;
+        radial-gradient(circle at top left, #ffd6e7, transparent 35%),
+        radial-gradient(circle at bottom right, #d9d6ff, transparent 35%),
+        linear-gradient(135deg, #fff5f8, #f5f3ff);
+
+    color: #333;
 }
+
 
 /* =========================
-   FLOATING HEARTS
+   FLOATING BACKGROUND
 ========================= */
 
-.floating-heart {
+.bg-heart {
     position: fixed;
-    bottom: -50px;
+    bottom: -40px;
+    font-size: 25px;
+    opacity: 0.35;
+    animation: floatUp linear infinite;
     pointer-events: none;
-    z-index: 50;
-    animation: floatHeart linear forwards;
+    z-index: 0;
 }
 
-@keyframes floatHeart {
+@keyframes floatUp {
+
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
     }
 
     15% {
-        opacity: .8;
+        opacity: 0.5;
     }
 
     100% {
-        transform: translateY(-115vh) rotate(360deg);
+        transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
 }
 
+
 /* =========================
-   INTRO / LOCK SCREEN
+   LOCK SCREEN
 ========================= */
 
 #lockScreen {
@@ -78,433 +74,39 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 25px;
-    background:
-        radial-gradient(circle at center, #ffd6e5, #fff5f8 65%);
+    position: relative;
+    z-index: 2;
 }
 
 .lock-card {
+
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
+
     padding: 45px 30px;
-    border-radius: 35px;
-
-    background: rgba(255,255,255,.72);
-    backdrop-filter: blur(18px);
-
-    box-shadow: 0 30px 80px rgba(180,60,110,.18);
-
-    animation: appear 1s ease;
-}
-
-.lock-icon {
-    font-size: 65px;
-    margin-bottom: 15px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    50% {
-        transform: scale(1.12);
-    }
-}
-
-.lock-card h1 {
-    color: #d14376;
-    font-size: 35px;
-}
-
-.lock-card p {
-    margin: 15px 0;
-    line-height: 1.8;
-}
-
-input {
-    width: 100%;
-    max-width: 300px;
-    padding: 15px 20px;
-
-    border: 2px solid #ffc2d8;
-    border-radius: 50px;
-
-    outline: none;
-    text-align: center;
-    font-size: 16px;
-
-    background: white;
-}
-
-input:focus {
-    border-color: #e85d91;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.btn {
-    margin-top: 22px;
-    padding: 15px 28px;
-
-    border: none;
-    border-radius: 50px;
-
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-
-    background: linear-gradient(
-        135deg,
-        #d94678,
-        #ff91b6
-    );
-
-    box-shadow: 0 12px 30px rgba(220,70,120,.28);
-
-    cursor: pointer;
-    transition: .3s;
-}
-
-.btn:hover {
-    transform: translateY(-4px) scale(1.04);
-}
-
-/* =========================
-   MAIN CONTENT
-========================= */
-
-#main {
-    display: none;
-}
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     text-align: center;
-    padding: 30px;
-}
 
-.hero-card {
-    max-width: 800px;
-    width: 100%;
+    background: rgba(255,255,255,0.72);
 
-    padding: 60px 25px;
-
-    border-radius: 40px;
-
-    background: rgba(255,255,255,.72);
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 30px 90px rgba(170,60,100,.16);
-
-    animation: appear 1s ease;
-}
-
-.small {
-    color: #d45780;
-    font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    margin: 15px 0;
-
-    font-size: clamp(50px, 11vw, 100px);
-
-    background: linear-gradient(
-        90deg,
-        #c83f73,
-        #ff8fb5,
-        #c83f73
-    );
-
-    background-size: 200%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: gradient 4s linear infinite;
-}
-
-@keyframes gradient {
-    to {
-        background-position: 200%;
-    }
-}
-
-.hero-text {
-    font-size: 19px;
-    line-height: 1.9;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    min-height: 100vh;
-    padding: 90px 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-.container {
-    width: 100%;
-    max-width: 800px;
-}
-
-h2 {
-    color: #c83f73;
-    font-size: clamp(32px, 6vw, 52px);
-    margin-bottom: 25px;
-}
-
-.text {
-    font-size: 18px;
-    line-height: 2;
-}
-
-/* =========================
-   MYSTERY BOX
-========================= */
-
-.gift-box {
-    margin: 35px auto;
-    width: 150px;
-    height: 120px;
-
-    position: relative;
-
-    cursor: pointer;
-
-    transition: .5s;
-}
-
-.box-body {
-    position: absolute;
-    bottom: 0;
-
-    width: 150px;
-    height: 90px;
-
-    background: linear-gradient(
-        135deg,
-        #ed6392,
-        #d83e72
-    );
-
-    border-radius: 5px;
-}
-
-.box-body::before {
-    content: "";
-
-    position: absolute;
-    left: 62px;
-
-    width: 25px;
-    height: 90px;
-
-    background: #ffd04f;
-}
-
-.box-lid {
-    position: absolute;
-    top: 0;
-
-    width: 150px;
-    height: 35px;
-
-    background: #ff7da8;
-
-    border-radius: 7px;
-}
-
-.box-lid::before {
-    content: "";
-
-    position: absolute;
-    left: 62px;
-
-    width: 25px;
-    height: 35px;
-
-    background: #ffd04f;
-}
-
-.gift-box:hover {
-    transform: scale(1.1) rotate(-3deg);
-}
-
-.gift-open {
-    animation: giftOpen .8s ease forwards;
-}
-
-@keyframes giftOpen {
-    50% {
-        transform: scale(1.2) rotate(5deg);
-    }
-
-    100% {
-        transform: scale(0);
-        opacity: 0;
-    }
-}
-
-.gift-message {
-    display: none;
-
-    padding: 30px;
-
-    background: white;
-    border-radius: 25px;
-
-    box-shadow: 0 20px 60px rgba(160,50,90,.15);
-
-    animation: pop .6s ease;
-}
-
-.gift-message.show {
-    display: block;
-}
-
-/* =========================
-   MINI GAME
-========================= */
-
-.game-area {
-    position: relative;
-
-    height: 400px;
-
-    margin-top: 30px;
+    border: 1px solid rgba(255,255,255,0.9);
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #ffe0eb,
-        #fff
-    );
+    backdrop-filter: blur(20px);
 
-    overflow: hidden;
+    box-shadow:
+        0 25px 70px rgba(180, 100, 150, 0.20);
 
-    border: 2px solid #ffd1df;
+    animation: cardAppear 1s ease;
 }
 
-.game-heart {
-    position: absolute;
+@keyframes cardAppear {
 
-    font-size: 35px;
-
-    cursor: pointer;
-
-    user-select: none;
-
-    transition: .2s;
-}
-
-.score {
-    font-size: 20px;
-    margin-bottom: 15px;
-
-    color: #d14376;
-    font-weight: bold;
-}
-
-/* =========================
-   SECRET LETTER
-========================= */
-
-.letter {
-    display: none;
-
-    margin-top: 30px;
-
-    padding: 35px 25px;
-
-    border-radius: 30px;
-
-    background: white;
-
-    box-shadow: 0 20px 60px rgba(160,50,90,.15);
-
-    animation: pop .6s ease;
-}
-
-.letter.show {
-    display: block;
-}
-
-.letter h3 {
-    color: #d14376;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.letter p {
-    font-size: 18px;
-    line-height: 2;
-}
-
-/* =========================
-   FINAL
-========================= */
-
-.final {
-    background:
-        linear-gradient(
-            135deg,
-            #ffd7e6,
-            #fff5f8
-        );
-
-    flex-direction: column;
-}
-
-.final h2 {
-    font-size: clamp(40px, 9vw, 70px);
-}
-
-.signature {
-    margin-top: 30px;
-
-    font-size: 27px;
-
-    color: #d14376;
-    font-weight: 600;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 35px 20px;
-
-    text-align: center;
-
-    color: #a75c77;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes appear {
     from {
         opacity: 0;
-        transform: translateY(40px) scale(.95);
+        transform: translateY(30px) scale(0.95);
     }
 
     to {
@@ -513,53 +115,499 @@ footer {
     }
 }
 
-@keyframes pop {
-    from {
-        opacity: 0;
-        transform: scale(.75);
+.lock-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
     }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
+    50% {
+        transform: translateY(-10px);
     }
 }
+
+h1 {
+    color: #d63384;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.secret-label {
+    font-weight: 700;
+    color: #9c2770;
+    margin-bottom: 10px;
+}
+
+#dob {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    border: 2px solid #f1b6d0;
+
+    outline: none;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    background: white;
+
+    margin-bottom: 15px;
+}
+
+#dob:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 0 4px rgba(214,51,132,0.1);
+}
+
+.unlock-btn {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #d63384, #ff6fa8);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow: 0 10px 25px rgba(214,51,132,0.25);
+}
+
+.unlock-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(214,51,132,0.35);
+}
+
+#error {
+
+    display: none;
+
+    margin-top: 15px;
+
+    color: #d62828;
+
+    font-weight: 600;
+
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-7px);
+    }
+
+    75% {
+        transform: translateX(7px);
+    }
+}
+
+
+/* =========================
+   MAIN SURPRISE
+========================= */
+
+#main {
+    display: none;
+    min-height: 100vh;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #ffe0ec;
+
+    color: #c22570;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+
+    font-size: 48px;
+
+    color: #c22570;
+
+    margin-bottom: 10px;
+}
+
+.hero p {
+
+    color: #666;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.photo-card {
+
+    width: 190px;
+    height: 190px;
+
+    margin: 30px auto;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg,#ffd1e3,#eee5ff);
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 15px 45px rgba(160,90,130,0.22);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 70px;
+
+    overflow: hidden;
+}
+
+/*
+   If you want to add sister photo:
+
+   Replace the emoji inside .photo-card
+   with:
+
+   <img src="sister.jpg">
+
+   Keep sister.jpg in same folder.
+*/
+
+.photo-card img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   MESSAGE CARD
+========================= */
+
+.message-card {
+
+    background: rgba(255,255,255,0.78);
+
+    backdrop-filter: blur(15px);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(120,80,120,0.12);
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.message-card h3 {
+
+    color: #c22570;
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+
+    text-align: center;
+}
+
+.message-card p {
+
+    line-height: 2;
+
+    color: #555;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MEMORY BOXES
+========================= */
+
+.memories {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.memory {
+
+    background: white;
+
+    padding: 25px 15px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 30px rgba(100,70,100,0.1);
+
+    transition: 0.3s;
+}
+
+.memory:hover {
+
+    transform: translateY(-7px);
+}
+
+.memory .emoji {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.memory h4 {
+
+    color: #c22570;
+
+    margin-bottom: 8px;
+}
+
+.memory p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-card {
+
+    margin-top: 30px;
+
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f2efff
+        );
+
+    border: 2px dashed #e5a8c7;
+}
+
+.final-card h3 {
+
+    color: #c22570;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.final-card p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    width: 9px;
+    height: 14px;
+
+    top: -20px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:600px) {
+@media(max-width:650px) {
+
+    h1 {
+        font-size: 28px;
+    }
 
     .lock-card {
-        padding: 35px 20px;
+        padding: 35px 22px;
     }
 
-    .hero-card {
-        padding: 45px 18px;
+    .hero h2 {
+        font-size: 36px;
     }
 
-    .hero-text,
-    .text {
+    .hero p {
         font-size: 16px;
     }
 
-    .game-area {
-        height: 330px;
+    .memories {
+        grid-template-columns: 1fr;
     }
 
+    .message-card {
+        padding: 25px 20px;
+    }
+
+    .message-card p {
+        font-size: 15px;
+    }
 }
+
 </style>
 </head>
 
 
 <body>
 
-<!-- =====================================================
-     LOCK SCREEN
-===================================================== -->
 
-<div id="lockScreen">
+<!-- =====================================
+     FLOATING BACKGROUND HEARTS
+====================================== -->
+
+<div class="bg-heart" style="left:5%; animation-duration:12s;">💗</div>
+<div class="bg-heart" style="left:20%; animation-duration:16s;">💕</div>
+<div class="bg-heart" style="left:35%; animation-duration:13s;">💖</div>
+<div class="bg-heart" style="left:55%; animation-duration:18s;">💗</div>
+<div class="bg-heart" style="left:75%; animation-duration:14s;">💕</div>
+<div class="bg-heart" style="left:90%; animation-duration:17s;">💖</div>
+
+
+<!-- =====================================
+     LOCK SCREEN
+====================================== -->
+
+<section id="lockScreen">
 
     <div class="lock-card">
 
@@ -567,584 +615,1595 @@ footer {
             🔐
         </div>
 
-        <h1>Hey Lakshmipriya...</h1>
-
-        <p>
-            Someone made a little surprise for you. 👀
-            <br>
-            But first... prove that you're really you. 😌
-        </p>
-
-        <p>
-            <b>Enter your secret date 💗</b>
-        </p>
-
-        <input
-            id="dob"
-            type="text"
-            placeholder="DD-MM-YYYY"
-        >
-
-        <br>
-
-        <button class="btn" onclick="unlock()">
-            Unlock My Surprise ✨
-        </button>
-
-        <p
-            id="error"
-            style="
-                color:#d14376;
-                display:none;
-                margin-top:15px;
-            "
-        >
-            Hmm... wrong date 👀 Try again!
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MAIN WEBSITE
-===================================================== -->
-
-<div id="main">
-
-
-<!-- HERO -->
-
-<div class="hero">
-
-    <div class="hero-card">
-
-        <div class="small">
-            A little something for you
-        </div>
-
         <h1>
-            Lakshmipriya 💗
+            Hey Lakshmipriya... 💖
         </h1>
 
-        <p class="hero-text">
+        <p class="subtitle">
 
-            Some people make life beautiful
+            Someone made a little surprise
+            especially for you. ✨
+
             <br>
-            without even trying.
-            <br><br>
 
-            <b>
-                You are one of those people. 🌸
-            </b>
+            But first...
+
+            prove that you're really you! 😄
 
         </p>
 
-        <button
-            class="btn"
-            onclick="scrollToSection('message')"
+
+        <div class="secret-label">
+
+            Enter your secret date 💕
+            
+        </div>
+
+
+        <!--
+            IMPORTANT:
+            type="text" is used intentionally.
+
+            Therefore input will be:
+            16-01-2008
+        -->
+
+        <input
+            type="text"
+            id="dob"
+            placeholder="DD-MM-YYYY"
+            maxlength="10"
+            autocomplete="off"
         >
-            Start The Surprise ✨
-        </button>
 
-    </div>
-
-</div>
-
-
-<!-- MESSAGE -->
-
-<section id="message">
-
-    <div class="container">
-
-        <h2>
-            Dear Lakshmipriya 🌷
-        </h2>
-
-        <p class="text">
-
-            This isn't for your birthday.
-            <br>
-
-            It isn't for any special occasion either.
-            <br><br>
-
-            It's simply because I wanted you to know
-            that you're loved, appreciated,
-            and genuinely special.
-            <br><br>
-
-            Life wouldn't be the same without
-            all the little moments, laughs,
-            fights and memories we share. ❤️
-
-        </p>
 
         <button
-            class="btn"
-            onclick="scrollToSection('gift')"
+            class="unlock-btn"
+            onclick="unlock()"
         >
-            But Wait... 🎁
+
+            Unlock My Surprise ✨
+
         </button>
+
+
+        <div id="error">
+
+            ❌ Hmm... that's not the secret date!
+            Try again 💗
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- GIFT -->
 
-<section id="gift">
+<!-- =====================================
+     MAIN SURPRISE
+====================================== -->
+
+<section id="main">
 
     <div class="container">
 
-        <h2>
-            There's Something Here For You 🎁
-        </h2>
 
-        <p>
-            Don't just stare at it. 😂
-            <br>
-            <b>Click the box.</b>
-        </p>
+        <!-- HERO -->
 
+        <div class="hero">
 
-        <div
-            class="gift-box"
-            id="giftBox"
-            onclick="openGift()"
-        >
+            <div class="hero-badge">
+                ✨ A Little Surprise ✨
+            </div>
 
-            <div class="box-lid"></div>
+            <h2>
+                For Lakshmipriya 💖
+            </h2>
 
-            <div class="box-body"></div>
+            <p>
+                Because having a sister like you
+                is something special.
+            </p>
 
         </div>
 
 
-        <div
-            class="gift-message"
-            id="giftMessage"
-        >
+
+        <!-- PHOTO -->
+
+        <div class="photo-card">
+
+            🌸
+
+            <!--
+            OPTIONAL PHOTO:
+
+            Replace 🌸 with:
+
+            <img src="sister.jpg">
+
+            Then keep sister.jpg
+            in the same folder as this HTML.
+            -->
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div class="message-card">
 
             <h3>
-                Surprise! 💖
+                Dear Lakshmipriya 💌
             </h3>
 
             <p>
-                Okay... technically there's no
-                expensive gift here. 😂
+
+                Life-la namma ellarum different paths-la
+                travel pannalum, family bond mattum
+                always special-aa irukkum. ❤️
+
                 <br><br>
 
-                Because this website itself
-                took the budget. 😌
+                Nee sirikkumbothu veetla oru
+                different happiness varum. 😊
+
                 <br><br>
 
-                But there's one more challenge...
+                Sometimes namma sanda poduvom,
+                sometimes tease pannuvom,
+                sometimes pesama iruppom...
+
+                But at the end of the day,
+
+                <br>
+
+                <strong>
+                    you will always be my sister
+                    and an important part of my life. 💖
+                </strong>
+
             </p>
 
-            <button
-                class="btn"
-                onclick="scrollToSection('game')"
-            >
-                Accept The Challenge 🎮
-            </button>
-
         </div>
 
-    </div>
-
-</section>
 
 
-<!-- GAME -->
+        <!-- THREE BOXES -->
 
-<section id="game">
+        <div class="memories">
 
-    <div class="container">
 
-        <h2>
-            Catch The Hearts 💗
-        </h2>
+            <div class="memory">
 
-        <p>
-            Catch <b>10 hearts</b> to unlock
-            the secret message.
-        </p>
+                <div class="emoji">
+                    🫶
+                </div>
 
-        <div class="score">
-            Score:
-            <span id="score">0</span>
-            / 10
-        </div>
+                <h4>
+                    Always There
+                </h4>
 
-        <div
-            class="game-area"
-            id="gameArea"
-        >
+                <p>
+                    Whatever happens,
+                    family will always have
+                    your back.
+                </p>
 
-            <div
-                class="game-heart"
-                id="gameHeart"
-                onclick="catchHeart()"
-            >
-                💗
+            </div>
+
+
+            <div class="memory">
+
+                <div class="emoji">
+                    😂
+                </div>
+
+                <h4>
+                    Endless Fun
+                </h4>
+
+                <p>
+                    From silly fights to
+                    unforgettable laughs,
+                    memories are priceless.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="emoji">
+                    🌟
+                </div>
+
+                <h4>
+                    Keep Shining
+                </h4>
+
+                <p>
+                    Keep smiling,
+                    keep growing,
+                    and keep being you.
+                </p>
+
             </div>
 
         </div>
 
-        <div id="gameComplete" style="display:none">
-
-            <h3
-                style="
-                    margin-top:25px;
-                    color:#d14376;
-                    font-size:25px;
-                "
-            >
-                You did it! 🥹💗
-            </h3>
-
-            <button
-                class="btn"
-                onclick="showLetter()"
-            >
-                Unlock The Secret 💌
-            </button>
-
-        </div>
 
 
-        <!-- SECRET LETTER -->
+        <!-- FINAL MESSAGE -->
 
-        <div
-            class="letter"
-            id="letter"
-        >
+        <div class="final-card">
 
             <h3>
-                Okay... Here's the truth 🥹
+                One Last Thing... 💝
             </h3>
 
             <p>
 
-                You're not just my sister.
-                <br><br>
+                No matter how much we grow,
 
-                You're one of the most beautiful
-                parts of my life.
-                <br><br>
-
-                We may tease each other,
-                annoy each other,
-                and fight over stupid things...
-                <br><br>
-
-                But at the end of everything,
                 <br>
 
-                <b>
-                    I'll always have your back. ❤️
-                </b>
+                you'll always be
+                <strong>my little sister</strong>.
+
+                🥹💕
 
                 <br><br>
 
-                No reason.
+                Wishing you a life full of
+
                 <br>
-                No occasion.
+
+                happiness 🌸
+                success 🌟
+                peace 🕊️
+                and lots of laughter 😂
+
                 <br><br>
 
-                <b>
-                    Just love. Always. 🫶
-                </b>
+                <strong>
+                    Stay happy, Lakshmipriya! 💖
+                </strong>
 
             </p>
 
-            <button
-                class="btn"
-                onclick="scrollToSection('final')"
-            >
-                One Last Thing... ✨
-            </button>
-
         </div>
 
+
+
+        <footer>
+
+            Made with ❤️ especially for Lakshmipriya
+
+        </footer>
+
+
     </div>
 
 </section>
 
-
-<!-- FINAL -->
-
-<section
-    class="final"
-    id="final"
->
-
-    <h2>
-        Stay Happy,
-        Lakshmipriya 💗
-    </h2>
-
-    <p
-        style="
-            margin-top:20px;
-            font-size:19px;
-            line-height:2;
-        "
-    >
-
-        Keep smiling.
-        <br>
-
-        Keep annoying me. 😂
-        <br>
-
-        Keep being you. 🌸
-        <br><br>
-
-        And remember...
-        <br>
-
-        <b>
-            You'll always have me. ❤️
-        </b>
-
-    </p>
-
-    <div class="signature">
-        Always your sibling 🫶
-    </div>
-
-</section>
-
-
-<footer>
-
-    Made with ❤️ specially for Lakshmipriya
-
-</footer>
-
-</div>
 
 
 <script>
 
-/* =====================================================
-   UNLOCK
-===================================================== */
+/* =====================================
+   UNLOCK FUNCTION
+====================================== */
 
 function unlock() {
 
+    const input =
+        document.getElementById("dob");
+
     const dob =
-        document.getElementById("dob").value.trim();
-
-    if (dob === "2008-01-16") {
-
-        document.getElementById("lockScreen").style.display =
-            "none";
-
-        document.getElementById("main").style.display =
-            "block";
-
-        createHearts(25);
-
-    } else {
-
-        document.getElementById("error").style.display =
-            "block";
-
-    }
-
-}
+        input.value.trim();
 
 
-/* =====================================================
-   SCROLL
-===================================================== */
+    /*
+       Correct secret date:
+       16-01-2008
+    */
 
-function scrollToSection(id) {
+    if (dob === "16-01-2008") {
 
-    document
-        .getElementById(id)
-        .scrollIntoView({
+        // Hide lock screen
+
+        document
+            .getElementById("lockScreen")
+            .style.display = "none";
+
+
+        // Show main surprise
+
+        document
+            .getElementById("main")
+            .style.display = "block";
+
+
+        // Start celebration
+
+        createConfetti();
+
+        createExtraHearts();
+
+        // Scroll to top
+
+        window.scrollTo({
+            top: 0,
             behavior: "smooth"
         });
 
-}
+    }
+
+    else {
+
+        // Show error
+
+        const error =
+            document.getElementById("error");
+
+        error.style.display = "block";
 
 
-/* =====================================================
-   GIFT
-===================================================== */
+        // Shake input
 
-function openGift() {
-
-    const box =
-        document.getElementById("giftBox");
-
-    const message =
-        document.getElementById("giftMessage");
-
-    box.classList.add("gift-open");
-
-    setTimeout(() => {
-
-        message.classList.add("show");
-
-        createHearts(20);
-
-    }, 500);
-
-}
+        input.style.animation =
+            "shake 0.4s";
 
 
-/* =====================================================
-   HEART GAME
-===================================================== */
+        setTimeout(function() {
 
-let score = 0;
+            input.style.animation = "";
 
-function moveHeart() {
-
-    const heart =
-        document.getElementById("gameHeart");
-
-    const area =
-        document.getElementById("gameArea");
-
-    const maxX =
-        area.clientWidth - 50;
-
-    const maxY =
-        area.clientHeight - 50;
-
-    heart.style.left =
-        Math.random() * maxX + "px";
-
-    heart.style.top =
-        Math.random() * maxY + "px";
-
-}
-
-
-function catchHeart() {
-
-    score++;
-
-    document.getElementById("score").innerText =
-        score;
-
-    createHearts(3);
-
-    if (score >= 10) {
-
-        document.getElementById("gameHeart").style.display =
-            "none";
-
-        document.getElementById("gameComplete").style.display =
-            "block";
-
-        createHearts(30);
-
-    } else {
-
-        moveHeart();
+        }, 500);
 
     }
 
 }
 
 
-/* =====================================================
-   SECRET LETTER
-===================================================== */
 
-function showLetter() {
+/* =====================================
+   ENTER KEY SUPPORT
+====================================== */
 
-    const letter =
-        document.getElementById("letter");
+document
+    .getElementById("dob")
+    .addEventListener("keydown", function(event) {
 
-    letter.classList.add("show");
+        if (event.key === "Enter") {
 
-    letter.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+            unlock();
+
+        }
+
     });
 
-    createHearts(35);
-
-}
 
 
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
+/* =====================================
+   CONFETTI
+====================================== */
 
-function createHearts(amount) {
+function createConfetti() {
 
-    const emojis = [
-        "💗",
+    const symbols = [
         "💖",
         "💕",
         "✨",
         "🌸",
-        "🫶"
+        "🎉",
+        "💗",
+        "⭐"
     ];
 
-    for (
-        let i = 0;
-        i < amount;
-        i++
-    ) {
+
+    for (let i = 0; i < 70; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+
+        piece.style.fontSize =
+            (12 + Math.random() * 15) + "px";
+
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(function() {
+
+            piece.remove();
+
+        }, 5500);
+
+    }
+
+}
+
+
+
+/* =====================================
+   EXTRA HEARTS
+====================================== */
+
+function createExtraHearts() {
+
+    const hearts = [
+        "💗",
+        "💖",
+        "💕",
+        "💝",
+        "🌸"
+    ];
+
+
+    for (let i = 0; i < 15; i++) {
 
         const heart =
             document.createElement("div");
 
         heart.className =
-            "floating-heart";
+            "bg-heart";
 
-        heart.innerText =
-            emojis[
+
+        heart.innerHTML =
+            hearts[
                 Math.floor(
                     Math.random() *
-                    emojis.length
+                    hearts.length
                 )
             ];
 
-        heart.style.left =
-            Math.random() * 100 + "vw";
 
-        heart.style.fontSize =
-            (18 + Math.random() * 25) + "px";
+        heart.style.left =
+            Math.random() * 100 + "%";
+
 
         heart.style.animationDuration =
-            (4 + Math.random() * 5) + "s";
+            (8 + Math.random() * 10) + "s";
 
-        heart.style.animationDelay =
-            Math.random() * 2 + "s";
 
         document.body.appendChild(heart);
 
-        setTimeout(() => {
+    }
 
-            heart.remove();
+}
 
-        }, 10000);
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>For Lakshmipriya 💖</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at top left, #ffd6e7, transparent 35%),
+        radial-gradient(circle at bottom right, #d9d6ff, transparent 35%),
+        linear-gradient(135deg, #fff5f8, #f5f3ff);
+
+    color: #333;
+}
+
+
+/* =========================
+   FLOATING BACKGROUND
+========================= */
+
+.bg-heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 25px;
+    opacity: 0.35;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   LOCK SCREEN
+========================= */
+
+#lockScreen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.lock-card {
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.72);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(180, 100, 150, 0.20);
+
+    animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.lock-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+h1 {
+    color: #d63384;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.secret-label {
+    font-weight: 700;
+    color: #9c2770;
+    margin-bottom: 10px;
+}
+
+#dob {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    border: 2px solid #f1b6d0;
+
+    outline: none;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    background: white;
+
+    margin-bottom: 15px;
+}
+
+#dob:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 0 4px rgba(214,51,132,0.1);
+}
+
+.unlock-btn {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #d63384, #ff6fa8);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow: 0 10px 25px rgba(214,51,132,0.25);
+}
+
+.unlock-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(214,51,132,0.35);
+}
+
+#error {
+
+    display: none;
+
+    margin-top: 15px;
+
+    color: #d62828;
+
+    font-weight: 600;
+
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-7px);
+    }
+
+    75% {
+        transform: translateX(7px);
+    }
+}
+
+
+/* =========================
+   MAIN SURPRISE
+========================= */
+
+#main {
+    display: none;
+    min-height: 100vh;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #ffe0ec;
+
+    color: #c22570;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+
+    font-size: 48px;
+
+    color: #c22570;
+
+    margin-bottom: 10px;
+}
+
+.hero p {
+
+    color: #666;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.photo-card {
+
+    width: 190px;
+    height: 190px;
+
+    margin: 30px auto;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg,#ffd1e3,#eee5ff);
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 15px 45px rgba(160,90,130,0.22);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 70px;
+
+    overflow: hidden;
+}
+
+/*
+   If you want to add sister photo:
+
+   Replace the emoji inside .photo-card
+   with:
+
+   <img src="sister.jpg">
+
+   Keep sister.jpg in same folder.
+*/
+
+.photo-card img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   MESSAGE CARD
+========================= */
+
+.message-card {
+
+    background: rgba(255,255,255,0.78);
+
+    backdrop-filter: blur(15px);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(120,80,120,0.12);
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.message-card h3 {
+
+    color: #c22570;
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+
+    text-align: center;
+}
+
+.message-card p {
+
+    line-height: 2;
+
+    color: #555;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MEMORY BOXES
+========================= */
+
+.memories {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.memory {
+
+    background: white;
+
+    padding: 25px 15px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 30px rgba(100,70,100,0.1);
+
+    transition: 0.3s;
+}
+
+.memory:hover {
+
+    transform: translateY(-7px);
+}
+
+.memory .emoji {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.memory h4 {
+
+    color: #c22570;
+
+    margin-bottom: 8px;
+}
+
+.memory p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-card {
+
+    margin-top: 30px;
+
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #f2efff
+        );
+
+    border: 2px dashed #e5a8c7;
+}
+
+.final-card h3 {
+
+    color: #c22570;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.final-card p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    width: 9px;
+    height: 14px;
+
+    top: -20px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .lock-card {
+        padding: 35px 22px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .memories {
+        grid-template-columns: 1fr;
+    }
+
+    .message-card {
+        padding: 25px 20px;
+    }
+
+    .message-card p {
+        font-size: 15px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     FLOATING BACKGROUND HEARTS
+====================================== -->
+
+<div class="bg-heart" style="left:5%; animation-duration:12s;">💗</div>
+<div class="bg-heart" style="left:20%; animation-duration:16s;">💕</div>
+<div class="bg-heart" style="left:35%; animation-duration:13s;">💖</div>
+<div class="bg-heart" style="left:55%; animation-duration:18s;">💗</div>
+<div class="bg-heart" style="left:75%; animation-duration:14s;">💕</div>
+<div class="bg-heart" style="left:90%; animation-duration:17s;">💖</div>
+
+
+<!-- =====================================
+     LOCK SCREEN
+====================================== -->
+
+<section id="lockScreen">
+
+    <div class="lock-card">
+
+        <div class="lock-icon">
+            🔐
+        </div>
+
+        <h1>
+            Hey Lakshmipriya... 💖
+        </h1>
+
+        <p class="subtitle">
+
+            Someone made a little surprise
+            especially for you. ✨
+
+            <br>
+
+            But first...
+
+            prove that you're really you! 😄
+
+        </p>
+
+
+        <div class="secret-label">
+
+            Enter your secret date 💕
+            
+        </div>
+
+
+        <!--
+            IMPORTANT:
+            type="text" is used intentionally.
+
+            Therefore input will be:
+            16-01-2008
+        -->
+
+        <input
+            type="text"
+            id="dob"
+            placeholder="DD-MM-YYYY"
+            maxlength="10"
+            autocomplete="off"
+        >
+
+
+        <button
+            class="unlock-btn"
+            onclick="unlock()"
+        >
+
+            Unlock My Surprise ✨
+
+        </button>
+
+
+        <div id="error">
+
+            ❌ Hmm... that's not the secret date!
+            Try again 💗
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MAIN SURPRISE
+====================================== -->
+
+<section id="main">
+
+    <div class="container">
+
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+            <div class="hero-badge">
+                ✨ A Little Surprise ✨
+            </div>
+
+            <h2>
+                For Lakshmipriya 💖
+            </h2>
+
+            <p>
+                Because having a sister like you
+                is something special.
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO -->
+
+        <div class="photo-card">
+
+            🌸
+
+            <!--
+            OPTIONAL PHOTO:
+
+            Replace 🌸 with:
+
+            <img src="sister.jpg">
+
+            Then keep sister.jpg
+            in the same folder as this HTML.
+            -->
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div class="message-card">
+
+            <h3>
+                Dear Lakshmipriya 💌
+            </h3>
+
+            <p>
+
+                Life-la namma ellarum different paths-la
+                travel pannalum, family bond mattum
+                always special-aa irukkum. ❤️
+
+                <br><br>
+
+                Nee sirikkumbothu veetla oru
+                different happiness varum. 😊
+
+                <br><br>
+
+                Sometimes namma sanda poduvom,
+                sometimes tease pannuvom,
+                sometimes pesama iruppom...
+
+                But at the end of the day,
+
+                <br>
+
+                <strong>
+                    you will always be my sister
+                    and an important part of my life. 💖
+                </strong>
+
+            </p>
+
+        </div>
+
+
+
+        <!-- THREE BOXES -->
+
+        <div class="memories">
+
+
+            <div class="memory">
+
+                <div class="emoji">
+                    🫶
+                </div>
+
+                <h4>
+                    Always There
+                </h4>
+
+                <p>
+                    Whatever happens,
+                    family will always have
+                    your back.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="emoji">
+                    😂
+                </div>
+
+                <h4>
+                    Endless Fun
+                </h4>
+
+                <p>
+                    From silly fights to
+                    unforgettable laughs,
+                    memories are priceless.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="emoji">
+                    🌟
+                </div>
+
+                <h4>
+                    Keep Shining
+                </h4>
+
+                <p>
+                    Keep smiling,
+                    keep growing,
+                    and keep being you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FINAL MESSAGE -->
+
+        <div class="final-card">
+
+            <h3>
+                One Last Thing... 💝
+            </h3>
+
+            <p>
+
+                No matter how much we grow,
+
+                <br>
+
+                you'll always be
+                <strong>my little sister</strong>.
+
+                🥹💕
+
+                <br><br>
+
+                Wishing you a life full of
+
+                <br>
+
+                happiness 🌸
+                success 🌟
+                peace 🕊️
+                and lots of laughter 😂
+
+                <br><br>
+
+                <strong>
+                    Stay happy, Lakshmipriya! 💖
+                </strong>
+
+            </p>
+
+        </div>
+
+
+
+        <footer>
+
+            Made with ❤️ especially for Lakshmipriya
+
+        </footer>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================
+   UNLOCK FUNCTION
+====================================== */
+
+function unlock() {
+
+    const input =
+        document.getElementById("dob");
+
+    const dob =
+        input.value.trim();
+
+
+    /*
+       Correct secret date:
+       16-01-2008
+    */
+
+    if (dob === "16-01-2008") {
+
+        // Hide lock screen
+
+        document
+            .getElementById("lockScreen")
+            .style.display = "none";
+
+
+        // Show main surprise
+
+        document
+            .getElementById("main")
+            .style.display = "block";
+
+
+        // Start celebration
+
+        createConfetti();
+
+        createExtraHearts();
+
+        // Scroll to top
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+    else {
+
+        // Show error
+
+        const error =
+            document.getElementById("error");
+
+        error.style.display = "block";
+
+
+        // Shake input
+
+        input.style.animation =
+            "shake 0.4s";
+
+
+        setTimeout(function() {
+
+            input.style.animation = "";
+
+        }, 500);
 
     }
 
 }
 
 
-/* =====================================================
-   START GAME HEART
-===================================================== */
 
-moveHeart();
+/* =====================================
+   ENTER KEY SUPPORT
+====================================== */
+
+document
+    .getElementById("dob")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            unlock();
+
+        }
+
+    });
 
 
-/* =====================================================
-   AUTOMATIC
+
+/* =====================================
+   CONFETTI
+====================================== */
+
+function createConfetti() {
+
+    const symbols = [
+        "💖",
+        "💕",
+        "✨",
+        "🌸",
+        "🎉",
+        "💗",
+        "⭐"
+    ];
+
+
+    for (let i = 0; i < 70; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+
+        piece.style.fontSize =
+            (12 + Math.random() * 15) + "px";
+
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(function() {
+
+            piece.remove();
+
+        }, 5500);
+
+    }
+
+}
+
+
+
+/* =====================================
+   EXTRA HEARTS
+====================================== */
+
+function createExtraHearts() {
+
+    const hearts = [
+        "💗",
+        "💖",
+        "💕",
+        "💝",
+        "🌸"
+    ];
+
+
+    for (let i = 0; i < 15; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "bg-heart";
+
+
+        heart.innerHTML =
+            hearts[
+                Math.floor(
+                    Math.random() *
+                    hearts.length
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+
+        heart.style.animationDuration =
+            (8 + Math.random() * 10) + "s";
+
+
+        document.body.appendChild(heart);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
